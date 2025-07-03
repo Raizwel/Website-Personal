@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplikasi Eliminasi Gauss-Jordan & Gauss-Seidel dengan Pengertian dan Rumus</title>
+    <title>Aplikasi Eliminasi Gauss-Jordan & Gauss-Seidel</title>
     <style>
         * {
             margin: 0;
@@ -63,105 +63,6 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
-        /* Styling untuk section pengertian */
-        .theory-section {
-            margin-bottom: 30px;
-            padding: 25px;
-            background: linear-gradient(145deg, #e3f2fd, #bbdefb);
-            border-radius: 15px;
-            border: 3px solid #2196f3;
-            box-shadow: 0 10px 25px rgba(33, 150, 243, 0.2);
-        }
-        .theory-title {
-            font-size: 1.8em;
-            color: #0d47a1;
-            margin-bottom: 20px;
-            text-align: center;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        .theory-content {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .definition {
-            font-size: 1.1em;
-            margin-bottom: 20px;
-            text-align: justify;
-            color: #333;
-        }
-        .formula-box {
-            background: linear-gradient(145deg, #fff3e0, #ffe0b2);
-            border: 2px solid #ff9800;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 15px 0;
-        }
-        .formula-title {
-            font-size: 1.3em;
-            color: #e65100;
-            margin-bottom: 15px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .formula-content {
-            font-family: 'Courier New', monospace;
-            font-size: 1.1em;
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #ff9800;
-            margin: 10px 0;
-        }
-        .steps-list {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #28a745;
-        }
-        .steps-list ol {
-            margin-left: 20px;
-        }
-        .steps-list li {
-            margin: 8px 0;
-            font-weight: 500;
-        }
-        .advantages-disadvantages {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        .advantage-box {
-            background: linear-gradient(145deg, #e8f5e8, #c8e6c9);
-            border: 2px solid #4caf50;
-            border-radius: 10px;
-            padding: 15px;
-        }
-        .disadvantage-box {
-            background: linear-gradient(145deg, #fff3e0, #ffcc02);
-            border: 2px solid #ff9800;
-            border-radius: 10px;
-            padding: 15px;
-        }
-        .convergence-box {
-            background: linear-gradient(145deg, #f3e5f5, #e1bee7);
-            border: 2px solid #9c27b0;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 15px 0;
-        }
-
-        /* Styling yang sudah ada sebelumnya */
         .examples-section {
             margin-bottom: 30px;
             padding: 25px;
@@ -209,8 +110,6 @@
             color: white;
         }
         .difficulty-easy { background: #4caf50; }
-        .difficulty-medium { background: #ff9800; }
-        .difficulty-hard { background: #f44336; }
         .example-problem {
             font-family: monospace;
             font-size: 1.1em;
@@ -219,13 +118,6 @@
             background: #f5f5f5;
             border-radius: 8px;
             border-left: 4px solid #ff9800;
-        }
-        .example-solution {
-            margin: 15px 0;
-            padding: 15px;
-            background: #e8f5e8;
-            border-radius: 8px;
-            border-left: 4px solid #4caf50;
         }
         .example-buttons {
             display: flex;
@@ -246,28 +138,6 @@
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
         }
-        .btn-show-solution {
-            background: linear-gradient(135deg, #4caf50, #45a049);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-        .btn-show-solution:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
-        }
-        .solution-steps {
-            display: none;
-            margin-top: 15px;
-            padding: 15px;
-            background: #f0f8ff;
-            border-radius: 8px;
-            border: 2px solid #2196f3;
-        }
         .input-section {
             margin-bottom: 30px;
             padding: 25px;
@@ -287,20 +157,22 @@
         }
         .matrix-input {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
+            grid-template-columns: repeat(4, 80px);
+            gap: 8px;
             margin-bottom: 25px;
-            max-width: 500px;
+            max-width: 350px;
+            justify-content: center;
         }
         .matrix-input input {
-            padding: 15px;
+            padding: 10px 8px;
             border: 2px solid #ddd;
-            border-radius: 10px;
+            border-radius: 8px;
             text-align: center;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: bold;
             transition: all 0.3s ease;
             background: white;
+            width: 80px;
         }
         .matrix-input input:focus {
             outline: none;
@@ -471,7 +343,13 @@
                 padding: 20px;
             }
             .matrix-input {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2, 80px);
+                gap: 6px;
+            }
+            .matrix-input input {
+                width: 80px;
+                padding: 8px 6px;
+                font-size: 13px;
             }
             .header h1 {
                 font-size: 2.2em;
@@ -481,9 +359,6 @@
             }
             .example-buttons {
                 flex-direction: column;
-            }
-            .advantages-disadvantages {
-                grid-template-columns: 1fr;
             }
         }
         .loading {
@@ -505,82 +380,20 @@
     <div class="container">
         <div class="header">
             <h1>🧮 Aplikasi Eliminasi Gauss-Jordan & Gauss-Seidel</h1>
-            <p>Solusi Sistem Persamaan Linear dengan Pengertian, Rumus, dan Langkah-langkah Detail</p>
+            <p>Solusi Sistem Persamaan Linear dengan Langkah-langkah Detail</p>
         </div>
         <div class="content">
             <!-- Metode Gauss-Jordan -->
             <div class="method-section">
                 <h2 class="method-title">📊 Metode Eliminasi Gauss-Jordan</h2>
                 
-                <!-- Pengertian dan Rumus Gauss-Jordan -->
-                <div class="theory-section">
-                    <h3 class="theory-title">
-                        📚 Pengertian dan Rumus Metode Gauss-Jordan
-                    </h3>
-                    
-                    <div class="theory-content">
-                        <div class="definition">
-                            <strong>Metode Eliminasi Gauss-Jordan</strong> adalah pengembangan dari eliminasi Gauss yang digunakan untuk menyelesaikan sistem persamaan linear. Metode ini mengubah matriks augmented menjadi bentuk <strong>Reduced Row Echelon Form (RREF)</strong> atau matriks identitas, sehingga solusi dapat langsung dibaca tanpa perlu substitusi balik.
-                        </div>
-                        
-                        <div class="formula-box">
-                            <div class="formula-title">
-                                🔢 Langkah-langkah Metode Gauss-Jordan:
-                            </div>
-                            <div class="steps-list">
-                                <ol>
-                                    <li>Bentuk matriks augmented [A|b] dari sistem persamaan</li>
-                                    <li>Lakukan operasi baris elementer untuk membuat pivot = 1</li>
-                                    <li>Eliminasi semua elemen di atas dan di bawah pivot menjadi 0</li>
-                                    <li>Ulangi untuk semua baris hingga terbentuk matriks identitas</li>
-                                    <li>Baca solusi langsung dari kolom terakhir</li>
-                                </ol>
-                            </div>
-                        </div>
-                        
-                        <div class="formula-box">
-                            <div class="formula-title">
-                                ⚡ Rumus Operasi Baris Elementer:
-                            </div>
-                            <div class="formula-content">
-                                <strong>1. Normalisasi Pivot:</strong><br>
-                                R<sub>i</sub> = R<sub>i</sub> / a<sub>ii</sub>
-                            </div>
-                            <div class="formula-content">
-                                <strong>2. Eliminasi:</strong><br>
-                                R<sub>j</sub> = R<sub>j</sub> - a<sub>ji</sub> × R<sub>i</sub>
-                            </div>
-                            <div class="formula-content">
-                                <strong>3. Pertukaran Baris:</strong><br>
-                                R<sub>i</sub> ↔ R<sub>j</sub>
-                            </div>
-                        </div>
-                        
-                        <div class="advantages-disadvantages">
-                            <div class="advantage-box">
-                                <strong>✅ Keunggulan:</strong><br>
-                                • Solusi langsung tanpa substitusi balik<br>
-                                • Cocok untuk sistem dengan banyak variabel<br>
-                                • Hasil akurat untuk sistem well-conditioned
-                            </div>
-                            <div class="disadvantage-box">
-                                <strong>⚠️ Kelemahan:</strong><br>
-                                • Membutuhkan banyak operasi aritmatika<br>
-                                • Sensitif terhadap kesalahan pembulatan<br>
-                                • Tidak efisien untuk matriks sparse
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
                 <!-- Contoh Soal Gauss-Jordan -->
                 <div class="examples-section">
                     <h3 class="examples-title">📚 Contoh Soal Eliminasi Gauss-Jordan</h3>
                     
-                    <!-- Contoh 1 -->
                     <div class="example-card">
                         <div class="example-header">
-                            <div class="example-title">Contoh 1: Sistem Linear Sederhana</div>
+                            <div class="example-title">Contoh: Sistem Linear Sederhana</div>
                             <div class="difficulty-badge difficulty-easy">Mudah</div>
                         </div>
                         <div class="example-problem">
@@ -590,68 +403,7 @@
                             -2x₁ + x₂ + 2x₃ = -3
                         </div>
                         <div class="example-buttons">
-                            <button class="btn-example-use" onclick="useGJExample(1)">🔄 Gunakan Contoh Ini</button>
-                            <button class="btn-show-solution" onclick="toggleSolution('gj-solution-1')">👁️ Lihat Penyelesaian</button>
-                        </div>
-                        <div id="gj-solution-1" class="solution-steps">
-                            <strong>Penyelesaian:</strong><br>
-                            <strong>Solusi:</strong> x₁ = 2, x₂ = 1, x₃ = -2<br><br>
-                            <strong>Verifikasi:</strong><br>
-                            • Persamaan 1: 2(2) + 1(1) - 1(-2) = 4 + 1 + 2 = 7 ≠ 8 ❌<br>
-                            • Mari coba lagi dengan perhitungan yang benar...
-                        </div>
-                    </div>
-
-                    <!-- Contoh 2 -->
-                    <div class="example-card">
-                        <div class="example-header">
-                            <div class="example-title">Contoh 2: Sistem dengan Koefisien Pecahan</div>
-                            <div class="difficulty-badge difficulty-medium">Sedang</div>
-                        </div>
-                        <div class="example-problem">
-                            <strong>Sistem Persamaan:</strong><br>
-                            x₁ + 2x₂ + 3x₃ = 14<br>
-                            2x₁ + x₂ + x₃ = 8<br>
-                            3x₁ + x₂ + 2x₃ = 13
-                        </div>
-                        <div class="example-buttons">
-                            <button class="btn-example-use" onclick="useGJExample(2)">🔄 Gunakan Contoh Ini</button>
-                            <button class="btn-show-solution" onclick="toggleSolution('gj-solution-2')">👁️ Lihat Penyelesaian</button>
-                        </div>
-                        <div id="gj-solution-2" class="solution-steps">
-                            <strong>Penyelesaian:</strong><br>
-                            <strong>Solusi:</strong> x₁ = 1, x₂ = 2, x₃ = 3<br><br>
-                            <strong>Verifikasi:</strong><br>
-                            • Persamaan 1: 1 + 2(2) + 3(3) = 1 + 4 + 9 = 14 ✓<br>
-                            • Persamaan 2: 2(1) + 2 + 3 = 2 + 2 + 3 = 7 ≠ 8 ❌<br>
-                            • Persamaan 3: 3(1) + 2 + 2(3) = 3 + 2 + 6 = 11 ≠ 13 ❌
-                        </div>
-                    </div>
-
-                    <!-- Contoh 3 -->
-                    <div class="example-card">
-                        <div class="example-header">
-                            <div class="example-title">Contoh 3: Sistem dengan Pivot Besar</div>
-                            <div class="difficulty-badge difficulty-hard">Sulit</div>
-                        </div>
-                        <div class="example-problem">
-                            <strong>Sistem Persamaan:</strong><br>
-                            0.001x₁ + x₂ + x₃ = 2<br>
-                            x₁ + x₂ + x₃ = 3<br>
-                            x₁ + x₂ + 2x₃ = 4
-                        </div>
-                        <div class="example-buttons">
-                            <button class="btn-example-use" onclick="useGJExample(3)">🔄 Gunakan Contoh Ini</button>
-                            <button class="btn-show-solution" onclick="toggleSolution('gj-solution-3')">👁️ Lihat Penyelesaian</button>
-                        </div>
-                        <div id="gj-solution-3" class="solution-steps">
-                            <strong>Penyelesaian:</strong><br>
-                            Sistem ini memerlukan partial pivoting karena pivot pertama sangat kecil (0.001).<br>
-                            <strong>Solusi:</strong> x₁ = 1, x₂ = 1, x₃ = 1<br><br>
-                            <strong>Verifikasi:</strong><br>
-                            • Persamaan 1: 0.001(1) + 1 + 1 = 2.001 ≈ 2 ✓<br>
-                            • Persamaan 2: 1 + 1 + 1 = 3 ✓<br>
-                            • Persamaan 3: 1 + 1 + 2(1) = 4 ✓
+                            <button class="btn-example-use" onclick="useGJExample()">🔄 Gunakan Contoh Ini</button>
                         </div>
                     </div>
                 </div>
@@ -659,11 +411,11 @@
                 <div class="input-section">
                     <h3>🔢 Input Sistem Persamaan Linear (SPL) 3×3</h3>
                     <div class="input-description">
-                        Masukkan 12 digit koefisien (3 baris × 4 kolom) dan 3 digit konstanta untuk sistem persamaan linear 3 variabel
+                        Masukkan koefisien dan konstanta untuk sistem persamaan linear 3 variabel
                     </div>
                     
                     <div class="coefficient-label">Baris 1: a₁₁x₁ + a₁₂x₂ + a₁₃x₃ = b₁</div>
-                    <div class="matrix-input" id="gaussJordanMatrix">
+                    <div class="matrix-input">
                         <input type="number" step="any" placeholder="a₁₁" id="gj_0_0" title="Koefisien a₁₁">
                         <input type="number" step="any" placeholder="a₁₂" id="gj_0_1" title="Koefisien a₁₂">
                         <input type="number" step="any" placeholder="a₁₃" id="gj_0_2" title="Koefisien a₁₃">
@@ -696,85 +448,13 @@
             <div class="method-section">
                 <h2 class="method-title">🔄 Metode Gauss-Seidel</h2>
                 
-                <!-- Pengertian dan Rumus Gauss-Seidel -->
-                <div class="theory-section">
-                    <h3 class="theory-title">
-                        📚 Pengertian dan Rumus Metode Gauss-Seidel
-                    </h3>
-                    
-                    <div class="theory-content">
-                        <div class="definition">
-                            <strong>Metode Gauss-Seidel</strong> adalah metode iteratif untuk menyelesaikan sistem persamaan linear. Metode ini menggunakan nilai terbaru yang telah dihitung dalam iterasi yang sama untuk menghitung nilai variabel berikutnya, sehingga konvergensi lebih cepat dibandingkan metode Jacobi.
-                        </div>
-                        
-                        <div class="convergence-box">
-                            <div class="formula-title">
-                                🎯 Syarat Konvergensi (Diagonal Dominan):
-                            </div>
-                            <div class="formula-content">
-                                |a<sub>ii</sub>| > Σ|a<sub>ij</sub>| untuk semua i ≠ j<br><br>
-                                <strong>Contoh untuk sistem 3×3:</strong><br>
-                                • Baris 1: |a₁₁| > |a₁₂| + |a₁₃|<br>
-                                • Baris 2: |a₂₂| > |a₂₁| + |a₂₃|<br>
-                                • Baris 3: |a₃₃| > |a₃₁| + |a₃₂|
-                            </div>
-                            <div style="color: #4a148c; font-weight: bold; margin-top: 10px;">
-                                ✅ Jika matriks diagonal dominan, maka konvergensi terjamin!
-                            </div>
-                        </div>
-                        
-                        <div class="formula-box">
-                            <div class="formula-title">
-                                🔄 Rumus Iterasi Gauss-Seidel untuk Sistem 3×3:
-                            </div>
-                            <div class="formula-content">
-                                <strong>Iterasi ke-(k+1):</strong><br><br>
-                                x₁<sup>(k+1)</sup> = (b₁ - a₁₂x₂<sup>(k)</sup> - a₁₃x₃<sup>(k)</sup>) / a₁₁<br><br>
-                                x₂<sup>(k+1)</sup> = (b₂ - a₂₁x₁<sup>(k+1)</sup> - a₂₃x₃<sup>(k)</sup>) / a₂₂<br><br>
-                                x₃<sup>(k+1)</sup> = (b₃ - a₃₁x₁<sup>(k+1)</sup> - a₃₂x₂<sup>(k+1)</sup>) / a₃₃
-                            </div>
-                        </div>
-                        
-                        <div class="formula-box">
-                            <div class="formula-title">
-                                📊 Rumus Error dan Kriteria Berhenti:
-                            </div>
-                            <div class="formula-content">
-                                <strong>Error Maksimum:</strong><br>
-                                Error = max|x<sub>i</sub><sup>(k+1)</sup> - x<sub>i</sub><sup>(k)</sup>|<br><br>
-                                <strong>Kriteria Berhenti:</strong><br>
-                                • Error < Toleransi, ATAU<br>
-                                • Iterasi mencapai maksimum yang ditentukan
-                            </div>
-                        </div>
-                        
-                        <div class="advantages-disadvantages">
-                            <div class="advantage-box">
-                                <strong>✅ Keunggulan:</strong><br>
-                                • Konvergensi lebih cepat dari Jacobi<br>
-                                • Memori efisien (hanya perlu 1 set variabel)<br>
-                                • Cocok untuk matriks sparse<br>
-                                • Mudah diimplementasi
-                            </div>
-                            <div class="disadvantage-box">
-                                <strong>⚠️ Kelemahan:</strong><br>
-                                • Tidak selalu konvergen<br>
-                                • Bergantung pada matriks koefisien<br>
-                                • Perlu reordering untuk diagonal dominan<br>
-                                • Sensitif terhadap tebakan awal
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
                 <!-- Contoh Soal Gauss-Seidel -->
                 <div class="examples-section">
                     <h3 class="examples-title">📚 Contoh Soal Gauss-Seidel</h3>
                     
-                    <!-- Contoh 1 -->
                     <div class="example-card">
                         <div class="example-header">
-                            <div class="example-title">Contoh 1: Sistem Diagonal Dominan</div>
+                            <div class="example-title">Contoh: Sistem Diagonal Dominan</div>
                             <div class="difficulty-badge difficulty-easy">Mudah</div>
                         </div>
                         <div class="example-problem">
@@ -784,72 +464,7 @@
                             2x₁ - x₂ + 10x₃ = -11
                         </div>
                         <div class="example-buttons">
-                            <button class="btn-example-use" onclick="useGSExample(1)">🔄 Gunakan Contoh Ini</button>
-                            <button class="btn-show-solution" onclick="toggleSolution('gs-solution-1')">👁️ Lihat Penyelesaian</button>
-                        </div>
-                        <div id="gs-solution-1" class="solution-steps">
-                            <strong>Penyelesaian:</strong><br>
-                            Sistem ini diagonal dominan karena:<br>
-                            • Baris 1: |10| > |-1| + |2| = 3 ✓<br>
-                            • Baris 2: |11| > |-1| + |-1| = 2 ✓<br>
-                            • Baris 3: |10| > |2| + |-1| = 3 ✓<br><br>
-                            <strong>Solusi:</strong> x₁ ≈ 1.000, x₂ ≈ 2.000, x₃ ≈ -1.000<br>
-                            <strong>Konvergensi:</strong> Sekitar 5-7 iterasi dengan toleransi 0.0001
-                        </div>
-                    </div>
-
-                    <!-- Contoh 2 -->
-                    <div class="example-card">
-                        <div class="example-header">
-                            <div class="example-title">Contoh 2: Sistem dengan Konvergensi Lambat</div>
-                            <div class="difficulty-badge difficulty-medium">Sedang</div>
-                        </div>
-                        <div class="example-problem">
-                            <strong>Sistem Persamaan:</strong><br>
-                            5x₁ + 2x₂ + x₃ = 12<br>
-                            x₁ + 4x₂ + 2x₃ = 15<br>
-                            2x₁ + x₂ + 6x₃ = 20
-                        </div>
-                        <div class="example-buttons">
-                            <button class="btn-example-use" onclick="useGSExample(2)">🔄 Gunakan Contoh Ini</button>
-                            <button class="btn-show-solution" onclick="toggleSolution('gs-solution-2')">👁️ Lihat Penyelesaian</button>
-                        </div>
-                        <div id="gs-solution-2" class="solution-steps">
-                            <strong>Penyelesaian:</strong><br>
-                            Sistem ini diagonal dominan lemah:<br>
-                            • Baris 1: |5| > |2| + |1| = 3 ✓<br>
-                            • Baris 2: |4| = |1| + |2| = 3 (batas)<br>
-                            • Baris 3: |6| > |2| + |1| = 3 ✓<br><br>
-                            <strong>Solusi:</strong> x₁ ≈ 1.000, x₂ ≈ 2.000, x₃ ≈ 2.500<br>
-                            <strong>Konvergensi:</strong> Sekitar 10-15 iterasi (lebih lambat)
-                        </div>
-                    </div>
-
-                    <!-- Contoh 3 -->
-                    <div class="example-card">
-                        <div class="example-header">
-                            <div class="example-title">Contoh 3: Sistem Tidak Diagonal Dominan</div>
-                            <div class="difficulty-badge difficulty-hard">Sulit</div>
-                        </div>
-                        <div class="example-problem">
-                            <strong>Sistem Persamaan:</strong><br>
-                            2x₁ + 3x₂ + x₃ = 11<br>
-                            x₁ + 2x₂ + 3x₃ = 13<br>
-                            3x₁ + x₂ + 2x₃ = 11
-                        </div>
-                        <div class="example-buttons">
-                            <button class="btn-example-use" onclick="useGSExample(3)">🔄 Gunakan Contoh Ini</button>
-                            <button class="btn-show-solution" onclick="toggleSolution('gs-solution-3')">👁️ Lihat Penyelesaian</button>
-                        </div>
-                        <div id="gs-solution-3" class="solution-steps">
-                            <strong>Penyelesaian:</strong><br>
-                            Sistem ini TIDAK diagonal dominan:<br>
-                            • Baris 1: |2| < |3| + |1| = 4 ❌<br>
-                            • Baris 2: |2| < |1| + |3| = 4 ❌<br>
-                            • Baris 3: |2| < |3| + |1| = 4 ❌<br><br>
-                            <strong>Peringatan:</strong> Konvergensi tidak terjamin!<br>
-                            <strong>Solusi:</strong> x₁ = 1, x₂ = 2, x₃ = 2 (jika konvergen)<br>
-                            <strong>Catatan:</strong> Mungkin perlu reordering baris untuk diagonal dominan
+                            <button class="btn-example-use" onclick="useGSExample()">🔄 Gunakan Contoh Ini</button>
                         </div>
                     </div>
                 </div>
@@ -857,7 +472,7 @@
                 <div class="input-section">
                     <h3>🔢 Input Sistem Persamaan Linear (SPL) 3×3</h3>
                     <div class="input-description">
-                        Masukkan 12 digit koefisien (3 baris × 4 kolom) dan 3 digit konstanta untuk metode iteratif Gauss-Seidel
+                        Masukkan koefisien dan konstanta untuk metode iteratif Gauss-Seidel
                     </div>
                     
                     <div class="coefficient-label">Baris 1: a₁₁x₁ + a₁₂x₂ + a₁₃x₃ = b₁</div>
@@ -876,11 +491,11 @@
                         <input type="number" step="any" placeholder="b₂" id="gs_1_3" title="Konstanta b₂">
                     </div>
                     
-                    <div class="coefficient-label">Baris 3: a₃₁x₁ + a₃₂x₂ + a₃₃x₃ = b₃</div>
+                    <div class="coefficient-label">Baris 3: a₃₁x₁ + a₃₂x₂ + a₂₃x₃ = b₃</div>
                     <div class="matrix-input">
                         <input type="number" step="any" placeholder="a₃₁" id="gs_2_0" title="Koefisien a₃₁">
                         <input type="number" step="any" placeholder="a₃₂" id="gs_2_1" title="Koefisien a₃₂">
-                        <input type="number" step="any" placeholder="a₃₃" id="gs_2_2" title="Koefisien a₃₃">
+                        <input type="number" step="any" placeholder="a₃₃" id="gs_2_2" title="Koefisien a₂₃">
                         <input type="number" step="any" placeholder="b₃" id="gs_2_3" title="Konstanta b₃">
                     </div>
                     
@@ -901,99 +516,37 @@
     </div>
 
     <script>
-        // Data contoh soal Gauss-Jordan
-        const gjExamples = {
-            1: {
-                matrix: [
-                    [2, 1, -1, 8],
-                    [-3, -1, 2, -11],
-                    [-2, 1, 2, -3]
-                ],
-                solution: [2, 1, -2]
-            },
-            2: {
-                matrix: [
-                    [1, 2, 3, 14],
-                    [2, 1, 1, 8],
-                    [3, 1, 2, 13]
-                ],
-                solution: [1, 2, 3]
-            },
-            3: {
-                matrix: [
-                    [0.001, 1, 1, 2],
-                    [1, 1, 1, 3],
-                    [1, 1, 2, 4]
-                ],
-                solution: [1, 1, 1]
-            }
-        };
-
-        // Data contoh soal Gauss-Seidel
-        const gsExamples = {
-            1: {
-                matrix: [
-                    [10, -1, 2, 6],
-                    [-1, 11, -1, 25],
-                    [2, -1, 10, -11]
-                ],
-                solution: [1, 2, -1]
-            },
-            2: {
-                matrix: [
-                    [5, 2, 1, 12],
-                    [1, 4, 2, 15],
-                    [2, 1, 6, 20]
-                ],
-                solution: [1, 2, 2.5]
-            },
-            3: {
-                matrix: [
-                    [2, 3, 1, 11],
-                    [1, 2, 3, 13],
-                    [3, 1, 2, 11]
-                ],
-                solution: [1, 2, 2]
-            }
-        };
-
         // Fungsi untuk menggunakan contoh Gauss-Jordan
-        function useGJExample(exampleNum) {
-            const example = gjExamples[exampleNum];
-            if (!example) return;
+        function useGJExample() {
+            const example = [
+                [2, 1, -1, 8],
+                [-3, -1, 2, -11],
+                [-2, 1, 2, -3]
+            ];
 
             for (let i = 0; i < 3; i++) {
                 for (let j = 0; j < 4; j++) {
-                    document.getElementById(`gj_${i}_${j}`).value = example.matrix[i][j];
+                    document.getElementById(`gj_${i}_${j}`).value = example[i][j];
                 }
             }
-            // Scroll ke input section
             document.querySelector('.input-section').scrollIntoView({ behavior: 'smooth' });
         }
 
         // Fungsi untuk menggunakan contoh Gauss-Seidel
-        function useGSExample(exampleNum) {
-            const example = gsExamples[exampleNum];
-            if (!example) return;
+        function useGSExample() {
+            const example = [
+                [10, -1, 2, 6],
+                [-1, 11, -1, 25],
+                [2, -1, 10, -11]
+            ];
 
             for (let i = 0; i < 3; i++) {
                 for (let j = 0; j < 4; j++) {
-                    document.getElementById(`gs_${i}_${j}`).value = example.matrix[i][j];
+                    document.getElementById(`gs_${i}_${j}`).value = example[i][j];
                 }
             }
-            // Scroll ke input section
             const gsInputSection = document.querySelectorAll('.input-section')[1];
             gsInputSection.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Fungsi untuk toggle penyelesaian
-        function toggleSolution(solutionId) {
-            const solution = document.getElementById(solutionId);
-            if (solution.style.display === 'none' || solution.style.display === '') {
-                solution.style.display = 'block';
-            } else {
-                solution.style.display = 'none';
-            }
         }
 
         // Fungsi untuk membersihkan input Gauss-Jordan
@@ -1071,7 +624,6 @@
                     html += `<div style="margin: 8px 0; font-family: monospace; font-size: 1.1em; font-weight: bold;">${equation}</div>`;
                 }
                 html += `</div>`;
-
                 html += displayMatrix(matrix, "🔢 Matriks Augmented Awal:");
 
                 // Proses eliminasi Gauss-Jordan
@@ -1146,39 +698,12 @@
                     html += `</div>`;
                 });
 
-                // Tampilkan matriks identitas final
-                html += `<div class="step">`;
-                html += `<h4>✅ Matriks Identitas Tercapai!</h4>`;
-                html += displayMatrix(matrix, "🎯 Matriks Identitas dengan Solusi:");
-                html += `</div>`;
-
                 // Tampilkan solusi
                 html += `<div class="solution">`;
                 html += `<h3>🎉 Solusi Sistem Persamaan Linear</h3>`;
                 html += `<div class="variable-result">x₁ = ${matrix[0][3].toFixed(8)}</div>`;
                 html += `<div class="variable-result">x₂ = ${matrix[1][3].toFixed(8)}</div>`;
                 html += `<div class="variable-result">x₃ = ${matrix[2][3].toFixed(8)}</div>`;
-                
-                // Verifikasi solusi
-                html += `<div style="margin-top: 20px; padding: 15px; background: #e8f5e8; border-radius: 10px;">`;
-                html += `<h4>🔍 Verifikasi Solusi:</h4>`;
-                const originalMatrix = [];
-                for (let i = 0; i < 3; i++) {
-                    originalMatrix[i] = [];
-                    for (let j = 0; j < 4; j++) {
-                        originalMatrix[i][j] = parseFloat(document.getElementById(`gj_${i}_${j}`).value);
-                    }
-                }
-                
-                for (let i = 0; i < 3; i++) {
-                    const result = originalMatrix[i][0] * matrix[0][3] + 
-                                 originalMatrix[i][1] * matrix[1][3] + 
-                                 originalMatrix[i][2] * matrix[2][3];
-                    const error = Math.abs(result - originalMatrix[i][3]);
-                    const status = error < 1e-6 ? '✅' : '⚠️';
-                    html += `<div>Persamaan ${i+1}: ${result.toFixed(6)} ≈ ${originalMatrix[i][3]} (Error: ${error.toFixed(8)}) ${status}</div>`;
-                }
-                html += `</div>`;
                 html += `</div>`;
 
                 document.getElementById('gaussJordanResults').innerHTML = html;
@@ -1216,26 +741,6 @@
                 const tolerance = parseFloat(document.getElementById('tolerance').value) || 0.0001;
                 const maxIter = parseInt(document.getElementById('maxIterations').value) || 100;
 
-                // Cek diagonal dominance
-                let isDiagonallyDominant = true;
-                let dominanceInfo = [];
-                for (let i = 0; i < 3; i++) {
-                    let sum = 0;
-                    for (let j = 0; j < 3; j++) {
-                        if (i !== j) sum += Math.abs(A[i][j]);
-                    }
-                    const isDominant = Math.abs(A[i][i]) > sum;
-                    dominanceInfo.push({
-                        row: i + 1,
-                        diagonal: Math.abs(A[i][i]),
-                        sum: sum,
-                        isDominant: isDominant
-                    });
-                    if (!isDominant) {
-                        isDiagonallyDominant = false;
-                    }
-                }
-
                 let html = `<h3>🔄 Metode Gauss-Seidel - Langkah-langkah Iterasi</h3>`;
                 
                 // Tampilkan sistem persamaan
@@ -1252,37 +757,6 @@
                     }
                     equation += ` = ${b[i]}`;
                     html += `<div style="margin: 8px 0; font-family: monospace; font-size: 1.1em; font-weight: bold;">${equation}</div>`;
-                }
-                html += `</div>`;
-
-                // Cek diagonal dominance
-                html += `<div class="convergence-info">`;
-                html += `<h4>🔍 Analisis Diagonal Dominance:</h4>`;
-                dominanceInfo.forEach(info => {
-                    const status = info.isDominant ? '✅' : '❌';
-                    html += `<div>Baris ${info.row}: |${info.diagonal}| ${info.isDominant ? '>' : '≤'} ${info.sum.toFixed(4)} ${status}</div>`;
-                });
-                
-                if (isDiagonallyDominant) {
-                    html += `<div style="color: #2e7d32; font-weight: bold; margin-top: 10px;">✅ Matriks diagonal dominan - Konvergensi terjamin!</div>`;
-                } else {
-                    html += `<div style="color: #d32f2f; font-weight: bold; margin-top: 10px;">⚠️ Matriks tidak diagonal dominan - Konvergensi tidak terjamin!</div>`;
-                }
-                html += `</div>`;
-
-                // Transformasi ke bentuk iteratif
-                html += `<div class="step">`;
-                html += `<h4>🔄 Bentuk Iteratif Gauss-Seidel:</h4>`;
-                for (let i = 0; i < 3; i++) {
-                    let formula = `x${i+1}⁽ᵏ⁺¹⁾ = (${b[i]}`;
-                    for (let j = 0; j < 3; j++) {
-                        if (i !== j) {
-                            formula += A[i][j] >= 0 ? ` - ${A[i][j]}x${j+1}` : ` + ${Math.abs(A[i][j])}x${j+1}`;
-                            formula += j < i ? '⁽ᵏ⁺¹⁾' : '⁽ᵏ⁾';
-                        }
-                    }
-                    formula += `) / ${A[i][i]}`;
-                    html += `<div style="margin: 8px 0; font-family: monospace; font-size: 1.1em; background: #f0f8ff; padding: 8px; border-radius: 5px;">${formula}</div>`;
                 }
                 html += `</div>`;
 
@@ -1326,12 +800,7 @@
                         x1: x[0],
                         x2: x[1],
                         x3: x[2],
-                        error: maxError,
-                        calculation: {
-                            x1_calc: `(${b[0]} - ${A[0][1]}×${xOld[1].toFixed(6)} - ${A[0][2]}×${xOld[2].toFixed(6)}) / ${A[0][0]} = ${x[0].toFixed(6)}`,
-                            x2_calc: `(${b[1]} - ${A[1][0]}×${x[0].toFixed(6)} - ${A[1][2]}×${xOld[2].toFixed(6)}) / ${A[1][1]} = ${x[1].toFixed(6)}`,
-                            x3_calc: `(${b[2]} - ${A[2][0]}×${x[0].toFixed(6)} - ${A[2][1]}×${x[1].toFixed(6)}) / ${A[2][2]} = ${x[2].toFixed(6)}`
-                        }
+                        error: maxError
                     });
 
                     if (maxError < tolerance) {
@@ -1340,24 +809,9 @@
                     }
                 }
 
-                // Tampilkan beberapa iterasi pertama dengan detail perhitungan
+                // Tampilkan tabel iterasi
                 html += `<div class="step">`;
-                html += `<h4>🧮 Detail Perhitungan Iterasi (5 iterasi pertama):</h4>`;
-                for (let i = 1; i <= Math.min(5, iterations.length - 1); i++) {
-                    const iter = iterations[i];
-                    html += `<div style="margin: 15px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #4facfe;">`;
-                    html += `<h5>Iterasi ${iter.iter}:</h5>`;
-                    html += `<div style="font-family: monospace; margin: 5px 0;">x₁⁽${iter.iter}⁾ = ${iter.calculation.x1_calc}</div>`;
-                    html += `<div style="font-family: monospace; margin: 5px 0;">x₂⁽${iter.iter}⁾ = ${iter.calculation.x2_calc}</div>`;
-                    html += `<div style="font-family: monospace; margin: 5px 0;">x₃⁽${iter.iter}⁾ = ${iter.calculation.x3_calc}</div>`;
-                    html += `<div style="color: #d32f2f; font-weight: bold;">Error maksimum = ${iter.error.toFixed(8)}</div>`;
-                    html += `</div>`;
-                }
-                html += `</div>`;
-
-                // Tampilkan tabel iterasi lengkap
-                html += `<div class="step">`;
-                html += `<h4>📊 Tabel Iterasi Lengkap:</h4>`;
+                html += `<h4>📊 Tabel Iterasi:</h4>`;
                 html += `<table class="iteration-table">`;
                 html += `<tr><th>Iterasi</th><th>x₁</th><th>x₂</th><th>x₃</th><th>Error Maksimum</th><th>Status</th></tr>`;
                 
@@ -1388,17 +842,6 @@
                     html += `<div class="variable-result">x₁ = ${x[0].toFixed(10)}</div>`;
                     html += `<div class="variable-result">x₂ = ${x[1].toFixed(10)}</div>`;
                     html += `<div class="variable-result">x₃ = ${x[2].toFixed(10)}</div>`;
-                    
-                    // Verifikasi solusi
-                    html += `<div style="margin-top: 20px; padding: 15px; background: #e8f5e8; border-radius: 10px;">`;
-                    html += `<h4>🔍 Verifikasi Solusi:</h4>`;
-                    for (let i = 0; i < 3; i++) {
-                        const result = A[i][0] * x[0] + A[i][1] * x[1] + A[i][2] * x[2];
-                        const error = Math.abs(result - b[i]);
-                        const status = error < 1e-6 ? '✅' : '⚠️';
-                        html += `<div>Persamaan ${i+1}: ${result.toFixed(8)} ≈ ${b[i]} (Error: ${error.toFixed(10)}) ${status}</div>`;
-                    }
-                    html += `</div>`;
                     html += `</div>`;
                 } else {
                     html += `<div class="error">`;
@@ -1456,57 +899,6 @@
             if (gjResults) observer.observe(gjResults, { attributes: true });
             if (gsResults) observer.observe(gsResults, { attributes: true });
         });
-
-        // Fungsi untuk copy hasil ke clipboard
-        function copyResults(method) {
-            const resultsElement = method === 'gj' ? 
-                document.getElementById('gaussJordanResults') : 
-                document.getElementById('gaussSeidelResults');
-            
-            if (resultsElement && resultsElement.style.display === 'block') {
-                const text = resultsElement.innerText;
-                navigator.clipboard.writeText(text).then(() => {
-                    alert('Hasil berhasil disalin ke clipboard!');
-                }).catch(() => {
-                    alert('Gagal menyalin hasil.');
-                });
-            }
-        }
-
-        // Fungsi untuk print hasil
-        function printResults(method) {
-            const resultsElement = method === 'gj' ? 
-                document.getElementById('gaussJordanResults') : 
-                document.getElementById('gaussSeidelResults');
-            
-            if (resultsElement && resultsElement.style.display === 'block') {
-                const printWindow = window.open('', '_blank');
-                printWindow.document.write(`
-                    <html>
-                        <head>
-                            <title>Hasil ${method === 'gj' ? 'Gauss-Jordan' : 'Gauss-Seidel'}</title>
-                            <style>
-                                body { font-family: Arial, sans-serif; margin: 20px; }
-                                .matrix-display { background: #f5f5f5; padding: 15px; margin: 10px 0; }
-                                .step { margin: 20px 0; padding: 15px; border-left: 4px solid #4facfe; }
-                                .solution { background: #e8f5e8; padding: 20px; margin: 20px 0; }
-                                table { border-collapse: collapse; width: 100%; }
-                                th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
-                                th { background: #f0f0f0; }
-                            </style>
-                        </head>
-                        <body>
-                            <h1>Hasil ${method === 'gj' ? 'Eliminasi Gauss-Jordan' : 'Metode Gauss-Seidel'}</h1>
-                            ${resultsElement.innerHTML}
-                        </body>
-                    </html>
-                `);
-                printWindow.document.close();
-                printWindow.print();
-            }
-        }
     </script>
 </body>
 </html>
-
-
